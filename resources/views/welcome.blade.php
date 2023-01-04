@@ -28,9 +28,4 @@
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
-<script>
-    import PlayersList from "../js/components/PlayersList";
-    export default {
-        components: {PlayersList}
-    }
-</script>
+

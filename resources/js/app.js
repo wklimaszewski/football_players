@@ -7,6 +7,7 @@ window.Vue = require('vue').default;
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('players-list', require('./components/PlayersList.vue').default);
+Vue.component('player-details', require('./components/PlayerDetails.vue').default);
 
 import Vuetify from 'vuetify';
 Vue.use(Vuetify);
