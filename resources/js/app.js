@@ -16,6 +16,9 @@ const opts = {
     icons: {
         iconfont: 'mdiSvg', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
     },
+    theme: {
+        dark : true
+    }
 }
 const app = new Vue({
     el: '#app',

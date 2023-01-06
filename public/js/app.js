@@ -2125,7 +2125,9 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       items: null,
-      selected_item: null
+      selected_item: null,
+      dialog_club: false,
+      dialog_stats: false
     };
   },
   methods: {
@@ -2263,8 +2265,24 @@ var render = function render() {
         color: "primary",
         tile: ""
       }
-    }, [_vm._v("\n                                " + _vm._s(item.position) + "\n                            ")])], 1)], 1)];
-  })], 2)], 1) : _c("v-card", [_c("v-row", [_c("v-col", {
+    }, [_vm._v("\n                            " + _vm._s(item.position) + "\n                        ")])], 1)], 1)];
+  })], 2)], 1) : _c("v-card", {
+    attrs: {
+      dark: ""
+    }
+  }, [_c("v-btn", {
+    staticClass: "my-2",
+    attrs: {
+      dense: "",
+      outlined: "",
+      color: "orange"
+    },
+    on: {
+      click: function click($event) {
+        _vm.selected_item = null;
+      }
+    }
+  }, [_c("v-icon", [_vm._v("mdi-undo")]), _vm._v("Wróc do listy zawodników")], 1), _vm._v(" "), _c("v-row", [_c("v-col", {
     attrs: {
       sm: "12",
       md: "6",
@@ -2281,46 +2299,188 @@ var render = function render() {
       md: "6",
       lg: "6"
     }
-  }, [_c("v-card", [_c("v-card-title", [_vm._v(_vm._s(_vm.selected_item.first_name + " " + _vm.selected_item.last_name))]), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-card-text", [_c("v-list", {
+  }, [_c("v-card", {
+    staticClass: "mx-2",
     attrs: {
-      flat: ""
+      dark: ""
     }
-  }, [_c("v-subheader", [_vm._v("Informacje o zawodniku")]), _vm._v(" "), _c("v-text-field", {
+  }, [_c("v-card-title", [_vm._v(_vm._s(_vm.selected_item.first_name + " " + _vm.selected_item.last_name))]), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-card-text", [_c("v-row", [_c("v-col", [_c("v-text-field", {
     attrs: {
       outlined: "",
+      dense: "",
       label: "Narodowość",
       value: _vm.selected_item.national,
       readonly: ""
     }
-  }), _vm._v(" "), _c("v-text-field", {
+  })], 1), _vm._v(" "), _c("v-col", [_c("v-text-field", {
     attrs: {
       outlined: "",
-      label: "Narodowość",
-      value: _vm.selected_item.national,
+      dense: "",
+      label: "Pozycja",
+      value: _vm.selected_item.position,
       readonly: ""
     }
-  }), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-list-item", [_c("v-list-item-icon", [_c("v-icon", [_vm._v("mdi-flag")])], 1), _vm._v(" "), _c("v-list-item-content", [_c("v-list-item-title", [_vm._v(_vm._s(_vm.selected_item.national))])], 1)], 1)], 1), _vm._v(" "), _c("div", {
-    staticClass: "my-4 text-subtitle-1"
-  }, [_vm._v("\n                        $ • Italian, Cafe\n                    ")]), _vm._v(" "), _c("div", [_vm._v("Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.")])], 1), _vm._v(" "), _c("v-divider", {
-    staticClass: "mx-4"
-  }), _vm._v(" "), _c("v-card-title", [_vm._v("Tonight's availability")]), _vm._v(" "), _c("v-card-text", [_c("v-chip-group", {
+  })], 1)], 1), _vm._v(" "), _c("v-row", [_c("v-col", [_c("v-text-field", {
     attrs: {
-      "active-class": "deep-purple accent-4 white--text",
-      column: ""
+      dense: "",
+      outlined: "",
+      label: "Wiek",
+      value: _vm.selected_item.age,
+      readonly: ""
+    }
+  })], 1), _vm._v(" "), _c("v-col", [_c("v-text-field", {
+    attrs: {
+      dense: "",
+      outlined: "",
+      label: "Wzrost",
+      value: _vm.selected_item.height,
+      readonly: ""
+    }
+  })], 1), _vm._v(" "), _c("v-col", [_c("v-text-field", {
+    attrs: {
+      dense: "",
+      outlined: "",
+      label: "Waga",
+      value: _vm.selected_item.weight,
+      readonly: ""
+    }
+  })], 1)], 1), _vm._v(" "), _c("v-btn", {
+    attrs: {
+      outlined: "",
+      color: "red"
+    },
+    on: {
+      click: function click($event) {
+        _vm.dialog_club = true;
+      }
+    }
+  }, [_c("v-icon", [_vm._v("mdi-shield-star")]), _vm._v(_vm._s(_vm.selected_item.club.name) + "\n                        ")], 1)], 1)], 1), _vm._v(" "), _c("v-btn", {
+    staticClass: "mt-2",
+    attrs: {
+      color: "success",
+      block: ""
+    },
+    on: {
+      click: function click($event) {
+        _vm.dialog_stats = true;
+      }
+    }
+  }, [_c("v-icon", [_vm._v("mdi-note-search")]), _vm._v("Statystyki\n                ")], 1)], 1)], 1)], 1), _vm._v(" "), _c("v-dialog", {
+    attrs: {
+      "max-width": "600"
     },
     model: {
-      value: _vm.selection,
+      value: _vm.dialog_club,
       callback: function callback($$v) {
-        _vm.selection = $$v;
+        _vm.dialog_club = $$v;
       },
-      expression: "selection"
+      expression: "dialog_club"
     }
-  }, [_c("v-chip", [_vm._v("5:30PM")]), _vm._v(" "), _c("v-chip", [_vm._v("7:30PM")]), _vm._v(" "), _c("v-chip", [_vm._v("8:00PM")]), _vm._v(" "), _c("v-chip", [_vm._v("9:00PM")])], 1)], 1), _vm._v(" "), _c("v-card-actions", [_c("v-btn", {
+  }, [_c("v-card", {
     attrs: {
-      color: "deep-purple lighten-2",
-      text: ""
+      dark: ""
     }
-  }, [_vm._v("\n                        Reserve\n                    ")])], 1)], 1)], 1)], 1)], 1)], 1);
+  }, [_c("v-card-title", [_vm._v("\n                Klub\n            ")]), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-card-text", [_c("v-subheader", [_vm._v("Nazwa")]), _vm._v(" "), _vm.selected_item != null ? _c("v-chip", {
+    staticClass: "ms-2",
+    attrs: {
+      color: "orange"
+    }
+  }, [_vm._v(_vm._s(_vm.selected_item.club.name))]) : _vm._e(), _vm._v(" "), _c("v-subheader", [_vm._v("Kraj")]), _vm._v(" "), _vm.selected_item != null ? _c("v-chip", {
+    staticClass: "ms-2",
+    attrs: {
+      color: "orange"
+    }
+  }, [_vm._v(_vm._s(_vm.selected_item.club.country))]) : _vm._e(), _vm._v(" "), _c("v-subheader", [_vm._v("Liga")]), _vm._v(" "), _vm.selected_item != null ? _c("v-chip", {
+    staticClass: "ms-2",
+    attrs: {
+      color: "orange"
+    }
+  }, [_vm._v(_vm._s(_vm.selected_item.club.league))]) : _vm._e(), _vm._v(" "), _c("v-subheader", [_vm._v("Data utworzenia")]), _vm._v(" "), _vm.selected_item != null ? _c("v-chip", {
+    staticClass: "ms-2",
+    attrs: {
+      color: "orange"
+    }
+  }, [_vm._v(_vm._s(_vm.selected_item.club.year_created))]) : _vm._e()], 1), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-card-actions", [_c("v-btn", {
+    attrs: {
+      text: "",
+      color: "red"
+    },
+    on: {
+      click: function click($event) {
+        _vm.dialog_club = false;
+      }
+    }
+  }, [_vm._v("Zamknij")])], 1)], 1)], 1), _vm._v(" "), _c("v-dialog", {
+    attrs: {
+      "max-width": "400"
+    },
+    model: {
+      value: _vm.dialog_stats,
+      callback: function callback($$v) {
+        _vm.dialog_stats = $$v;
+      },
+      expression: "dialog_stats"
+    }
+  }, [_c("v-card", {
+    attrs: {
+      dark: ""
+    }
+  }, [_c("v-card-title", [_vm._v("\n                Statystyki\n            ")]), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-card-text", [_vm.selected_item != null ? _c("v-simple-table", [_c("tbody", [_c("tr", [_c("td", {
+    staticClass: "text-left"
+  }, [_vm._v("\n                                Mecze\n                            ")]), _vm._v(" "), _c("td", {
+    staticClass: "text-right"
+  }, [_c("v-chip", {
+    attrs: {
+      dense: "",
+      color: "teal darken-3"
+    }
+  }, [_vm._v(_vm._s(_vm.selected_item.statistics.matches))])], 1)]), _vm._v(" "), _c("tr", [_c("td", {
+    staticClass: "text-left"
+  }, [_vm._v("\n                                Bramki\n                            ")]), _vm._v(" "), _c("td", {
+    staticClass: "text-right"
+  }, [_c("v-chip", {
+    attrs: {
+      dense: "",
+      color: "purple"
+    }
+  }, [_vm._v(_vm._s(_vm.selected_item.statistics.goals))])], 1)]), _vm._v(" "), _c("tr", [_c("td", {
+    staticClass: "text-left"
+  }, [_vm._v("\n                                Asysty\n                            ")]), _vm._v(" "), _c("td", {
+    staticClass: "text-right"
+  }, [_c("v-chip", {
+    attrs: {
+      dense: "",
+      color: "primary"
+    }
+  }, [_vm._v(_vm._s(_vm.selected_item.statistics.assists))])], 1)]), _vm._v(" "), _c("tr", [_c("td", {
+    staticClass: "text-left"
+  }, [_vm._v("\n                                Zółte kartki\n                            ")]), _vm._v(" "), _c("td", {
+    staticClass: "text-right"
+  }, [_c("v-chip", {
+    attrs: {
+      dense: "",
+      color: "yellow accent-4"
+    }
+  }, [_vm._v(_vm._s(_vm.selected_item.statistics.yellow_cards))])], 1)]), _vm._v(" "), _c("tr", [_c("td", {
+    staticClass: "text-left"
+  }, [_vm._v("\n                                Czerwone kartki\n                            ")]), _vm._v(" "), _c("td", {
+    staticClass: "text-right"
+  }, [_c("v-chip", {
+    attrs: {
+      dense: "",
+      color: "red"
+    }
+  }, [_vm._v(_vm._s(_vm.selected_item.statistics.red_cards))])], 1)])])]) : _vm._e()], 1), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-card-actions", [_c("v-btn", {
+    attrs: {
+      text: "",
+      color: "red"
+    },
+    on: {
+      click: function click($event) {
+        _vm.dialog_stats = false;
+      }
+    }
+  }, [_vm._v("Zamknij")])], 1)], 1)], 1)], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2352,9 +2512,12 @@ vue__WEBPACK_IMPORTED_MODULE_1__["default"].use((vuetify__WEBPACK_IMPORTED_MODUL
 var opts = {
   icons: {
     iconfont: 'mdiSvg' // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+  },
+
+  theme: {
+    dark: true
   }
 };
-
 var app = new vue__WEBPACK_IMPORTED_MODULE_1__["default"]({
   el: '#app',
   vuetify: new (vuetify__WEBPACK_IMPORTED_MODULE_2___default())(opts)
@@ -96937,7 +97100,7 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_vue__;
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","/var/www/html/test/football_players"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"/var/www/html/test/football_players","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","D:\\\\xampp\\\\htdocs\\\\football_players"]],"_development":true,"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"D:\\\\xampp\\\\htdocs\\\\football_players","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 
