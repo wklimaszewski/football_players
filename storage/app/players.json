@@ -1,0 +1,242 @@
+[
+    {
+        "id": 1,
+        "first_name": "David",
+        "last_name": "Alaba",
+        "age": 30,
+        "weight": 78,
+        "height": 180,
+        "national": "Austria",
+        "position": "ŚO",
+        "avatar": "https://assets.aws.londynek.net/images/jdnews-agency/2191248/262689-202105291321-lg2.jpg.webp?t=1622294519",
+        "club": {
+            "name": "Real Madryt",
+            "country": "Hiszpania",
+            "league": "1",
+            "year_created": 1902
+        },
+        "statistics": {
+            "matches": 75,
+            "goals": 9,
+            "assists": 54,
+            "yellow_cards": 25,
+            "red_cards": 6
+        }
+    },
+    {
+        "id": 2,
+        "first_name": "Aurelien",
+        "last_name": "Tchouameni",
+        "age": 22,
+        "weight": 81,
+        "height": 187,
+        "national": "Francja",
+        "position": "ŚPD",
+        "avatar": "https://www.realmadryt.pl/static/images/photo/d186b870-cadb-4fa9-8092-8dc2246cfff4.jpg",
+        "club": {
+            "name": "Real Madryt",
+            "country": "Hiszpania",
+            "league": "1",
+            "year_created": 1902
+        },
+        "statistics": {
+            "matches": 58,
+            "goals": 48,
+            "assists": 24,
+            "yellow_cards": 1,
+            "red_cards": 4
+        }
+    },
+    {
+        "id": 3,
+        "first_name": "Antonio",
+        "last_name": "Rudiger",
+        "age": 29,
+        "weight": 85,
+        "height": 190,
+        "national": "Niemcy",
+        "position": "ŚO",
+        "avatar": "https://www.realmadryt.pl/static/images/photo/7cc8854e-a30f-468a-87e7-fd78090a6aa3.jpg",
+        "club": {
+            "name": "Real Madryt",
+            "country": "Niemcy",
+            "league": "1",
+            "year_created": 1902
+        },
+        "statistics": {
+            "matches": 89,
+            "goals": 50,
+            "assists": 14,
+            "yellow_cards": 4,
+            "red_cards": 2
+        }
+    },
+    {
+        "id": 4,
+        "first_name": "Kobe",
+        "last_name": "Schimmel",
+        "age": 23,
+        "weight": 72,
+        "height": 181,
+        "national": "Kuweit",
+        "position": "ŚP",
+        "avatar": "https://img.bleacherreport.net/img/slides/photos/003/362/289/51215273_crop_exact.jpg?w=2975&h=2048&q=85",
+        "club": {
+            "name": "Lucile",
+            "country": "Finlandia",
+            "league": "4",
+            "year_created": 1914
+        },
+        "statistics": {
+            "matches": 58,
+            "goals": 48,
+            "assists": 24,
+            "yellow_cards": 1,
+            "red_cards": 4
+        }
+    },
+    {
+        "id": 5,
+        "first_name": "Celestino",
+        "last_name": "Blick",
+        "age": 35,
+        "weight": 77,
+        "height": 190,
+        "national": "USA",
+        "position": "LP",
+        "avatar": "https://cdn.vox-cdn.com/thumbor/HlV3ZF4oZNsUUT48qGIknIeuyWg=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/23762455/1404600283.jpg",
+        "club": {
+            "name": "Hobart",
+            "country": "Niemcy",
+            "league": "3",
+            "year_created": 2020
+        },
+        "statistics": {
+            "matches": 17,
+            "goals": 1,
+            "assists": 67,
+            "yellow_cards": 4,
+            "red_cards": 1
+        }
+    },
+    {
+        "id": 6,
+        "first_name": "Rosendo",
+        "last_name": "Sporer",
+        "age": 38,
+        "weight": 90,
+        "height": 183,
+        "national": "Senegal",
+        "position": "PP",
+        "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Yu_Yang_-_Guangzhou_R%26F.jpg/1200px-Yu_Yang_-_Guangzhou_R%26F.jpg",
+        "club": {
+            "name": "Lew",
+            "country": "Rosja",
+            "league": "3",
+            "year_created": 1971
+        },
+        "statistics": {
+            "matches": 18,
+            "goals": 23,
+            "assists": 9,
+            "yellow_cards": 8,
+            "red_cards": 1
+        }
+    },
+    {
+        "id": 7,
+        "first_name": "Royal",
+        "last_name": "Schmeler",
+        "age": 37,
+        "weight": 87,
+        "height": 177,
+        "national": "Niemcy",
+        "position": "LP",
+        "avatar": "http://ocdn.eu/images/pulscms/MDQ7MDA_/856e7bdc645aca63e6b686ba9740835e.jpg",
+        "club": {
+            "name": "Carley",
+            "country": "Anglia",
+            "league": "3",
+            "year_created": 2001
+        },
+        "statistics": {
+            "matches": 58,
+            "goals": 48,
+            "assists": 24,
+            "yellow_cards": 1,
+            "red_cards": 4
+        }
+    },
+    {
+        "id": 8,
+        "first_name": "Roman",
+        "last_name": "Jacobi",
+        "age": 36,
+        "weight": 88,
+        "height": 182,
+        "national": "Austria",
+        "position": "PP",
+        "avatar": "https://bristolsport.azureedge.net/media/71356/jmp_bristol_city_v_millwall_rt0142.jpg?width=1240&height=808&mode=crop&quality=80",
+        "club": {
+            "name": "Lavina",
+            "country": "Rosja",
+            "league": "4",
+            "year_created": 1932
+        },
+        "statistics": {
+            "matches": 17,
+            "goals": 1,
+            "assists": 67,
+            "yellow_cards": 4,
+            "red_cards": 1
+        }
+    },
+    {
+        "id": 9,
+        "first_name": "Muhammad",
+        "last_name": "Huel",
+        "age": 29,
+        "weight": 74,
+        "height": 182,
+        "national": "Egipt",
+        "position": "ŚP",
+        "avatar": "https://www.cairowestmag.com/wp-content/uploads/2021/04/08820725-1024x575.jpg",
+        "club": {
+            "name": "Matilde",
+            "country": "RPA",
+            "league": "2",
+            "year_created": 2012
+        },
+        "statistics": {
+            "matches": 88,
+            "goals": 28,
+            "assists": 33,
+            "yellow_cards": 19,
+            "red_cards": 8
+        }
+    },
+    {
+        "id": 10,
+        "first_name": "Jarrett",
+        "last_name": "Lueilwitz",
+        "age": 21,
+        "weight": 73,
+        "height": 173,
+        "national": "Szwecja",
+        "position": "N",
+        "avatar": "https://d-art.ppstatic.pl/kadry/k/r/1/4b/88/632ac87e58bda_o_large.jpg",
+        "club": {
+            "name": "Gayle",
+            "country": "Kuweit",
+            "league": "3",
+            "year_created": 1903
+        },
+        "statistics": {
+            "matches": 18,
+            "goals": 23,
+            "assists": 9,
+            "yellow_cards": 8,
+            "red_cards": 1
+        }
+    }
+]
